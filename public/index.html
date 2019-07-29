@@ -21,7 +21,7 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body dir="rtl">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -34,5 +34,27 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDLHT9xDT8ggbwQlljnI0UnNZv2NyqZNFk",
+        authDomain: "toranutswitcher.firebaseapp.com",
+        databaseURL: "https://toranutswitcher.firebaseio.com",
+        projectId: "toranutswitcher",
+        storageBucket: "",
+        messagingSenderId: "602878008317",
+        appId: "1:602878008317:web:9259e3f40eb40856"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore();
+    </script>
   </body>
 </html>
