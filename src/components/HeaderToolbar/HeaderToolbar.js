@@ -77,7 +77,7 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-export default function HeaderToolbar() {
+export default function HeaderToolbar({toggleSideBar}) {
     const classes = useStyles()
     const [anchorEl, setAnchorEl] = React.useState(null)
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
@@ -183,6 +183,7 @@ export default function HeaderToolbar() {
                         className={classes.menuButton}
                         color="inherit"
                         aria-label="Open drawer"
+                        onClick={toggleSideBar}
                     >
                         <MenuIcon />
                     </IconButton>

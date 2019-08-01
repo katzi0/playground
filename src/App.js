@@ -1,10 +1,11 @@
 import React from 'react'
 import './App.css'
-import HeaderToolbar from './components/HeaderToolbar'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { jssPreset, StylesProvider, ThemeProvider } from '@material-ui/styles'
 import { create } from 'jss'
 import rtl from 'jss-rtl'
+import AppLayout from './containers/AppLayoutContainer/AppLayout'
+import configStore from './configStore'
 
 
 const theme = createMuiTheme({
@@ -18,7 +19,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <StylesProvider jss={jss}>
                 <div className="App">
-                    <HeaderToolbar />
+                    <AppLayout />
                 </div>
             </StylesProvider>
         </ThemeProvider>
