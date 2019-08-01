@@ -1,0 +1,39 @@
+[debug] [2019-07-26T07:30:45.083Z] ----------------------------------------------------------------------
+[debug] [2019-07-26T07:30:45.088Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-07-26T07:30:45.088Z] CLI Version:   7.2.0
+[debug] [2019-07-26T07:30:45.088Z] Platform:      win32
+[debug] [2019-07-26T07:30:45.088Z] Node Version:  v11.6.0
+[debug] [2019-07-26T07:30:45.091Z] Time:          Fri Jul 26 2019 10:30:45 GMT+0300 (Israel Daylight Time)
+[debug] [2019-07-26T07:30:45.091Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-26T07:30:45.105Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-26T07:30:45.105Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\user\WebstormProjects\turanotswitcher
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using toranutswitcher.
+[debug] [2019-07-26T07:30:51.021Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-26T07:30:51.022Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-26T07:30:56.987Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-26T07:30:57.001Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/toranutswitcher  
+ 
