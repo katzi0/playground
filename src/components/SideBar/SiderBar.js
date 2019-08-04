@@ -2,12 +2,12 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import List from '@material-ui/core/List'
-import Divider from '@material-ui/core/Divider'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
+import categories from '../../constants/categories'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import MailIcon from '@material-ui/icons/Mail'
+import { useDispatch } from 'react-redux'
+import { SET_SELECTED_CATEGORY } from '../../actions/appLayoutActions'
 
 const useStyles = makeStyles({
     list: {
@@ -21,17 +21,22 @@ const useStyles = makeStyles({
 export default function SideBar({ toggleSideBar, showSideBar }) {
     const classes = useStyles()
     const [state, setState] = React.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
+        selectedCategory: categories.EXAMPLE_LIST
     })
+
+    const dispatch = useDispatch()
+
 
     const toggleDrawer = (side, open) => event => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return
         }
         toggleSideBar({ [side]: open })
+    }
+
+    const onClick = (category) => () => {
+        console.log(category)
+        dispatch({ type: SET_SELECTED_CATEGORY, category: category })
     }
 
     const sideList = side => (
@@ -42,46 +47,10 @@ export default function SideBar({ toggleSideBar, showSideBar }) {
             onKeyDown={toggleDrawer(side, false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    )
-
-    const fullList = side => (
-        <div
-            className={classes.fullList}
-            role="presentation"
-            onClick={toggleDrawer(side, false)}
-            onKeyDown={toggleDrawer(side, false)}
-        >
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
+                {Object.keys(categories).map((key) => (
+                    <ListItem button key={key} onClick={onClick(key)}>
+                        <ListItemIcon>{categories[key].icon}</ListItemIcon>
+                        <ListItemText primary={key} />
                     </ListItem>
                 ))}
             </List>

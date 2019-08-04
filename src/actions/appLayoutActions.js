@@ -1,4 +1,4 @@
-export const SET_SELECTED_CATEGORY = "SET_SELECTED_CATEGORY"
+export const SET_SELECTED_CATEGORY = "set-selected-category"
 
 export function setSelectedCategory(category){
     return {

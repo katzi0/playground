@@ -1,7 +1,9 @@
 import { SET_SELECTED_CATEGORY } from '../actions/appLayoutActions'
 
-const categories = {
-    EXAMPLE_LIST: 'EXAMPLE_LIST'
+
+export const categories = {
+    EXAMPLE_LIST: 'EXAMPLE_LIST',
+    THIS_EXAMPLES: 'THIS_EXAMPLES'
 }
 
 const defaultState = {
